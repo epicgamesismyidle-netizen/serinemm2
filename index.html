@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SerineMiddleman — Professional Intermediary Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SerineMiddleman provides neutral, structured middleman services for secure private and commercial transactions.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/MKTdYN4.png">
+<link rel="shortcut icon" href="https://i.imgur.com/MKTdYN4.png" type="image/x-icon">
+
+<style>
+:root {
+    --bg: #0b0b10;
+    --surface: #12121a;
+    --text: #f5f5f7;
+    --muted: #a1a1aa;
+    --purple: #7c6cff;
+    --orange: #ff8a3d;
+    --border: #23232d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%, #1a1530, transparent),
+                radial-gradient(1000px 500px at 90% 10%, #201225, transparent),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(11,11,16,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    animation: slideDown 1s ease forwards;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 40px;
+    border-radius: 8px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.nav-links a {
+    margin-left: 28px;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+/* SECTIONS */
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+section:nth-of-type(5) { animation-delay: 1s; }
+
+h1 {
+    font-size: 54px;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -0.6px;
+}
+
+p {
+    color: var(--muted);
+    font-size: 18px;
+}
+
+/* HERO IMAGE */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.hero-image img {
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(124,108,255,0.5);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* DIVIDER */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+    margin-top: 60px;
+}
+
+.card {
+    background: linear-gradient(180deg, #141421, #0f0f17);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(124,108,255,0.4);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: var(--text);
+}
+
+/* VOUCHES */
+.vouch {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+/* CONTACT */
+.contact-box p {
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 60px 24px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://i.imgur.com/MKTdYN4.png" alt="SerineMiddleman Logo">
+            SerineMiddleman
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#vouches">Vouches</a>
+            <a href="#contact">Contact</a>
+            <a href="#tos">Legal / TOS</a>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <h1>Neutral execution<br>for transactions<br>that require trust.</h1>
+    <div class="hero-image">
+        <img src="https://i.imgur.com/MKTdYN4.png" alt="SerineMiddleman Hero Image">
+    </div>
+    <p>
+        SerineMiddleman operates as an independent intermediary for private and
+        commercial transactions, providing structure, neutrality, and controlled execution.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Transaction Intermediation</h3>
+            <p>Independent third-party handling based strictly on written conditions.</p>
+        </div>
+        <div class="card">
+            <h3>Conditional Release</h3>
+            <p>Assets or documentation are released only when predefined requirements are met.</p>
+        </div>
+        <div class="card">
+            <h3>Private & High-Value Deals</h3>
+            <p>Discreet facilitation for transactions where trust is essential.</p>
+        </div>
+        <div class="card">
+            <h3>Cross-Border Coordination</h3>
+            <p>Structured alignment between international parties and timelines.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="vouches">
+    <h2>Vouches — <span style="color:var(--purple)">serinevouches.com</span></h2>
+    <div class="grid">
+        <div class="card vouch">@naylou has vouched SerineMiddleman — 01-08-2026</div>
+        <div class="card vouch">@orbitx has vouched SerineMiddleman — 12-22-2025</div>
+        <div class="card vouch">@valenix has vouched SerineMiddleman — 02-14-2026</div>
+        <div class="card vouch">@aerrow has vouched SerineMiddleman — 06-03-2026</div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+        <p>
+            For transaction inquiries, coordination, or engagement reviews,
+            please use the contact methods below.
+        </p>
+
+        <p>
+            📧 Email:
+            <strong style="color:var(--orange)">serinemm@proton.me</strong><br><br>
+
+            💬 Telegram:
+            <a href="https://t.me/serine" target="_blank"
+               style="color:var(--purple); text-decoration:none;">
+               @serine
+            </a><br><br>
+
+            🔐 Signal:
+            <strong>serine.92</strong>
+        </p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="tos">
+    <h2>Legal / Terms of Service</h2>
+    <p style="max-width:800px;font-size:14px;">
+        SerineMiddleman provides procedural intermediary services only and does not offer
+        legal, financial, or investment advice. We do not represent either party.
+        Parties are responsible for independent professional review where applicable.
+    </p>
+</section>
+
+<footer>
+    <div>© 2026 SerineMiddleman. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
