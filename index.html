@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <title>SerineMM — Professional Escrow Bot</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SerineMM provides professional escrow services for secure private and commercial transactions.">
+<meta name="description" content="SerineMM provides professional escrow services for secure crypto transactions. Add the bot to your Telegram group and trade safely.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/MKTdYN4.png">
-<link rel="shortcut icon" href="https://i.imgur.com/MKTdYN4.png" type="image/x-icon">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -19,14 +21,14 @@
     --purple: #7c6cff;
     --orange: #ff8a3d;
     --border: #23232d;
+    --btn-gradient: linear-gradient(135deg,#7c6cff,#ff8a3d);
 }
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                 "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: radial-gradient(1200px 600px at 20% -10%, #1a1530, transparent),
                 radial-gradient(1000px 500px at 90% 10%, #201225, transparent),
                 var(--bg);
@@ -56,8 +58,8 @@ nav {
 }
 
 .logo {
-    font-weight: 600;
-    letter-spacing: -0.4px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
     color: var(--text);
     display: flex;
     align-items: center;
@@ -65,9 +67,9 @@ nav {
 }
 
 .logo img {
-    height: 40px;
-    border-radius: 8px;
-    animation: fadeIn 1.5s ease forwards;
+    height: 50px;
+    border-radius: 12px;
+    animation: float 4s ease-in-out infinite;
 }
 
 .nav-links a {
@@ -75,110 +77,135 @@ nav {
     text-decoration: none;
     font-size: 14px;
     color: var(--muted);
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--text);
 }
 
-/* SECTIONS */
-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 120px 24px;
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 140px 24px 80px;
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1s ease forwards;
+    animation-delay: 0.2s;
 }
 
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
-
-h1 {
-    font-size: 54px;
-    letter-spacing: -1.2px;
+.hero h1 {
+    font-size: 60px;
+    font-weight: 800;
     line-height: 1.1;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg,#7c6cff,#ff8a3d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-h2 {
-    font-size: 34px;
-    letter-spacing: -0.6px;
-}
-
-p {
+.hero p {
+    font-size: 20px;
     color: var(--muted);
-    font-size: 18px;
+    margin: 20px auto 40px;
+    max-width: 700px;
 }
 
-/* HERO IMAGE */
 .hero-image {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
+    margin: 40px auto;
 }
 
 .hero-image img {
-    width: 250px;
-    border-radius: 12px;
-    box-shadow: 0 12px 40px rgba(124,108,255,0.5);
+    width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(124,108,255,0.5);
     animation: float 4s ease-in-out infinite;
 }
 
-/* CTA BUTTON */
+/* CTA Button */
 .cta-button {
     display: inline-block;
-    background-color: var(--purple);
+    padding: 1.2em 2.5em;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 14px;
+    background: var(--btn-gradient);
     color: var(--text);
-    padding: 1em 2em;
-    font-size: 1.2em;
     text-decoration: none;
-    border-radius: 12px;
-    margin-top: 24px;
-    transition: 0.3s;
+    transition: 0.4s;
+    box-shadow: 0 8px 20px rgba(124,108,255,0.4);
+    animation: pulse 2s infinite;
 }
 
 .cta-button:hover {
-    background-color: #6655ff;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(124,108,255,0.6);
 }
 
 /* DIVIDER */
 .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 0 24px;
+}
+
+/* SERVICES */
+section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+}
+
+.card {
+    background: linear-gradient(180deg,#141421,#0f0f17);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 70px rgba(124,108,255,0.4);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 /* FOOTER */
 footer {
     border-top: 1px solid var(--border);
     padding: 60px 24px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
     text-align: center;
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
+@keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+@keyframes fadeUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideDown {from{transform:translateY(-100%);}to{transform:translateY(0);}}
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+@keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
 </style>
 </head>
 
@@ -199,13 +226,11 @@ footer {
 </nav>
 
 <section id="home" class="hero">
-    <h1>Professional Escrow Bot<br>for Secure Transactions</h1>
+    <h1>Professional Escrow Bot</h1>
     <div class="hero-image">
         <img src="https://i.imgur.com/MKTdYN4.png" alt="SerineMM Hero Image">
     </div>
-    <p>
-        SerineMM is a professional crypto escrow bot for Telegram. Quickly add SerineMM to your group to handle trades securely and efficiently.
-    </p>
+    <p>SerineMM is a professional Telegram bot for crypto escrow. Add it to your group to trade securely and efficiently with full middleman protection.</p>
     <a href="https://t.me/SerineMMBot?startgroup=true" target="_blank" class="cta-button">
         Add SerineMM to Your Group
     </a>
@@ -214,23 +239,23 @@ footer {
 <div class="divider"></div>
 
 <section id="services">
-    <h2>Services</h2>
+    <h2>Our Services</h2>
     <div class="grid">
         <div class="card">
             <h3>Neutral Escrow</h3>
-            <p>Middleman ensures secure, unbiased trade execution.</p>
+            <p>Secure trade execution with complete neutrality.</p>
         </div>
         <div class="card">
             <h3>Conditional Release</h3>
-            <p>Funds are only released when predefined trade conditions are met.</p>
+            <p>Funds are only released when pre-defined conditions are met.</p>
         </div>
         <div class="card">
             <h3>Multi-Asset Support</h3>
-            <p>Works with BTC, LTC, ETH, BNB, TRX, SOL, TON and more.</p>
+            <p>Supports BTC, LTC, ETH, BNB, TRX, SOL, TON and more.</p>
         </div>
         <div class="card">
             <h3>Telegram Integration</h3>
-            <p>Operate directly within Telegram groups for secure, traceable trades.</p>
+            <p>Operate directly inside your Telegram group with traceable panels.</p>
         </div>
     </div>
 </section>
@@ -239,8 +264,8 @@ footer {
 
 <section id="tos">
     <h2>Legal / Terms of Service</h2>
-    <p style="max-width:800px;font-size:14px;">
-        SerineMM provides procedural intermediary services only and does not offer legal, financial, or investment advice. We do not represent either party. Parties are responsible for independent professional review where applicable.
+    <p style="max-width:800px;font-size:14px;margin:auto;">
+        SerineMM provides procedural intermediary services only and does not offer legal, financial, or investment advice. Parties are responsible for independent professional review where applicable.
     </p>
 </section>
 
